@@ -51,7 +51,7 @@ class MyAbout(wx.Dialog):
         # Magic numbers for On about
         self.HTML_PAGE = 0
 
-        wx.Dialog.__init__(self, parent, win_id, title, size=(400, 620))
+        wx.Dialog.__init__(self, parent, win_id, title, size=(365, 560))
         icon1 = myicon.get_icon()
 
         self.SetIcon(icon1)
@@ -84,7 +84,7 @@ class MyAbout(wx.Dialog):
 
     def on_credit(self, event):
         """Toggles wxpoly About page to display. """
-        self.HTML_PAGE = (self.HTML_PAGE +1) %2
+        self.HTML_PAGE = (self.HTML_PAGE + 1) %2
         self.htmlwin.SetPage(page[self.HTML_PAGE])
         self.Update()
         event.Skip()

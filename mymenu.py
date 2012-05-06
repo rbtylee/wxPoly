@@ -35,20 +35,20 @@ except ImportError:
 def _m_data(self):
     """ Function to return menu list"""
     return [("&File", (
-                ("&New", "Create New Polygon", self._on_new_poly),
-                ("&Open", "Open file", self._on_open),
+                ("&New\tCtrl+N", "Create New Polygon", self._on_new_poly),
+                ("&Open\tCtrl+O", "Open file", self._on_open),
                 ("", "", ""),
-                ("&Save", "Save File", self._on_save),
-                ("S&ave As", "Save File as", self._on_save),
+                ("&Save\tCtrl+S", "Save File", self._on_save),
+                ("S&ave As\tCtrl+A", "Save File as", self._on_save),
                 ("Export", "Save as image", self._on_export),
                 ("", "", ""),
-           ("&Quit\tCtrl+Q", "Exit program", self._on_quit))),
+                ("&Quit\tCtrl+Q", "Exit program", self._on_quit))),
            ("&Edit",(
                 ("Set n", "Polygon Data", self._on_new_n),
                 ("Set radius", "Polygon Data", self._on_new_radius),
                 ("Set angle", "Polygon Data", self._on_new_rotation),
+                ("Pr&ef\tCtrl+E", "Program Preferences", self._on_new_pref))),
                 ("", "", ""),
-                ("Pr&ef", "Program Preferences", self._on_new_pref))),
            ("&View", (
                 ("Center", "Show Center", self._show_center, wx.ITEM_CHECK,
                         self.view.is_visible("Center")),
@@ -68,16 +68,16 @@ def _m_data(self):
                 ("Show Axis", "Show Axis", self._show_axis, wx.ITEM_CHECK,
                         self.view.is_visible("Axis") ))),
            ("&Polygon", (
-                ("&Random", "Set Random pentagon", self._on_new_rnd),
+                ("&Random\tCtrl+R", "Set Random pentagon", self._on_new_rnd),
                 ("", "", ""),
-                ("Nex&t", "Next Polygon", self._on_next),
-                ("Previou&s", "Previous Polygon", self._on_prev),
+                ("Nex&t\tCtrl+T", "Next Polygon", self._on_next),
+                ("&Previous\tCtrl+P", "Previous Polygon", self._on_prev),
                 ("", "", ""),
-                ("&Wicca", "Set to pentagon", self._on_wicca))),
+                ("&Wicca\tCtrl+W", "Set to pentagon", self._on_wicca))),
            ("&Help", (
-                ("&Contents", "Contents", self._on_help),
+                ("&Contents\tCtrl+C", "Contents", self._on_help),
                 ("", "", ""),
-                ("&About", "About", self._on_about)))]
+                ("&About\tCtrl+A", "About", self._on_about)))]
 
 def create_menu_bar(self):
     """Wrapper for wx.MenuBar."""
