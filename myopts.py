@@ -31,7 +31,7 @@ def command_line_arguments():
          using defaults if necessary.Used in wxpoly project.
 
     """
-    usage = " usage: %prog [-n] [-s] [-r] [-h] [--version]"
+    usage = "%prog [-n] [-s] [-r] [-h] [--version]"
     version = "2.0.1"
     vertices = config.default_dict["vert_default"]
     rotation = config.default_dict["rotation_default"]
@@ -60,7 +60,7 @@ def command_line_arguments():
     options_dict = vars(options)
 
     for key, value in options_dict.items():
-        if options_dict[key] is not None:
+        if options_dict[key]:
             if key == "num":
                 vertices = value
             elif key == "scale":
